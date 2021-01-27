@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Mask on",
+  "description": "코시국 마스크 구매",
+  "version": "1.1.0",
+  "permissions": [
+    "https://smartstore.naver.com/",
+    "https://order.pay.naver.com/"
+  ],
+  "icons": {
+    "96": "icon96.png"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "matches": [
+        "https://smartstore.naver.com/*",
+        "https://order.pay.naver.com/*"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "web_accessible_resources": [],
+  "browser_action": {
+    "default_title": "telegram",
+    "default_popup": "popup.html"
+  }
+}
